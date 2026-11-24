@@ -1,0 +1,57 @@
+/* InvenCore - Estilos específicos del registro.
+   Requiere style.css (variables) y login.css (tarjeta, inputs y botón compartidos). */
+
+/* Tarjeta más amplia que el login para aprovechar la grilla de 2 columnas */
+.registro-wrapper {
+  max-width: 760px;
+}
+
+/* Quita el icono de validación de Bootstrap dentro del input-group (ya hay icono de ojo) */
+.registro-form .form-control {
+  background-image: none !important;
+  padding-right: .5rem;
+}
+
+/* Estados de validación en vivo (clases is-valid / is-invalid aplicadas por JS) */
+.registro-form .login-input-group:has(.form-control.is-invalid) {
+  border-color: var(--ic-red);
+}
+
+.registro-form .login-input-group:has(.form-control.is-valid) {
+  border-color: var(--ic-emerald-dark);
+}
+
+.registro-form .login-input-group:has(.form-control.is-invalid):focus-within {
+  box-shadow: 0 0 0 .2rem rgba(220, 38, 38, .15);
+}
+
+.registro-form .invalid-feedback,
+.registro-form .valid-feedback {
+  padding: 0 .9rem .5rem;
+  margin-top: 0;
+  font-size: .78rem;
+}
+
+.registro-form .valid-feedback {
+  color: var(--ic-emerald-dark);
+}
+
+/* Indicador de requisitos de contraseña */
+.password-hint {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: .75rem;
+  color: #64748b;
+  transition: color .2s ease;
+}
+
+.password-hint.is-met {
+  color: var(--ic-emerald-dark);
+  font-weight: 600;
+}
+
+.registro-footer-text {
+  font-size: .85rem;
+  color: #475569;
+}

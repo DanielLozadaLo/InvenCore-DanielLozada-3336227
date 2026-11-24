@@ -1,0 +1,225 @@
+/* InvenCore - Estilos de Gestión de Salidas, Picking y Packing.
+   Requiere style.css (variables, sidebar, top bar). */
+
+/* ===== Base de la pantalla ===== */
+.main-column { background-color: #f8fafc; }          /* fondo de contenido */
+.salidas-container { max-width: 1170px; }
+
+.sal-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, .06);
+}
+
+/* ===== Tarjeta principal ===== */
+.badge-modulo {
+  padding: .15rem .65rem;
+  background: var(--ic-blue-soft);
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+  border-radius: 50rem;
+  font-size: .72rem;
+  font-weight: 600;
+}
+
+.sal-kicker   { font-size: .75rem; color: var(--ic-slate-400); }
+.sal-title    { font-size: 1.35rem; font-weight: 700; color: var(--ic-slate-900); }
+.sal-subtitle { font-size: .78rem; color: #64748b; }
+
+.btn-nueva-orden {
+  padding: .6rem 1.1rem;
+  background-color: var(--ic-blue);                  /* #0284c7 */
+  border-color: var(--ic-blue);
+  border-radius: .6rem;
+  color: #fff;
+  font-size: .82rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(2, 132, 199, .25);
+  transition: background-color .2s ease, transform .15s ease, box-shadow .2s ease;
+}
+
+.btn-nueva-orden:hover,
+.btn-nueva-orden:focus {
+  background-color: #0369a1;
+  border-color: #0369a1;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(2, 132, 199, .3);
+}
+
+/* ===== KPIs (4 etapas) ===== */
+.kpi-card { transition: transform .2s ease, box-shadow .2s ease; }
+.kpi-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(15, 23, 42, .09); }
+
+.kpi-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: .75rem;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+}
+
+.kpi-yellow { background: #fffbeb; color: #d97706; border-color: #fcd34d; }   /* 1. Pendientes: ámbar */
+.kpi-orange { background: #fff7ed; color: #ea580c; border-color: #fdba74; }   /* 2. Picking: naranja */
+.kpi-blue   { background: #eff6ff; color: #2563eb; border-color: #bfdbfe; }   /* 3. Packing: azul */
+.kpi-green  { background: #ecfdf5; color: var(--ic-emerald-dark); border-color: #a7f3d0; } /* 4. Despachados: verde */
+
+.kpi-label { font-size: .72rem; font-weight: 600; color: #64748b; }
+.kpi-value { font-size: 1.15rem; font-weight: 700; color: var(--ic-slate-900); }
+
+/* ===== Búsqueda y filtro ===== */
+.sal-search {
+  max-width: 320px;
+  background: #f8fafc;
+  border: 1px solid var(--ic-border);
+  border-radius: .6rem;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.sal-search:focus-within {
+  border-color: var(--ic-blue);
+  box-shadow: 0 0 0 .2rem rgba(2, 132, 199, .15);
+}
+
+.sal-search .input-group-text,
+.sal-search .form-control {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  font-size: .8rem;
+}
+
+.sal-search .input-group-text { color: var(--ic-slate-400); }
+.sal-search .form-control::placeholder { color: var(--ic-slate-400); }
+
+.sal-filter-label { font-size: .8rem; font-weight: 600; color: #64748b; }
+
+.btn-etapa {
+  padding: .5rem 1rem;
+  background: #f8fafc;
+  border: 1px solid var(--ic-border);
+  border-radius: .6rem;
+  color: var(--ic-slate-700);
+  font-size: .78rem;
+  font-weight: 600;
+  transition: background-color .2s ease, border-color .2s ease;
+}
+
+.btn-etapa:hover,
+.btn-etapa:focus,
+.btn-etapa.show {
+  background: #fff;
+  border-color: var(--ic-blue);
+  color: var(--ic-slate-900);
+}
+
+.sal-dropdown { border-radius: .6rem; font-size: .8rem; }
+.sal-dropdown .dropdown-item.active,
+.sal-dropdown .dropdown-item:active {
+  background-color: var(--ic-blue-soft);
+  color: #0369a1;
+  font-weight: 600;
+}
+
+/* ===== Tabla ===== */
+.sal-table { min-width: 1050px; font-size: .75rem; }
+
+.sal-table thead th {
+  padding: .9rem .75rem;
+  background: #f8fafc;
+  border-bottom: 1px solid var(--ic-border);
+  color: #64748b;
+  font-size: .72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sal-table tbody td {
+  padding: .9rem .75rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: var(--ic-slate-700);
+}
+
+.sal-table tbody tr:last-child td { border-bottom: 0; }
+.sal-table tbody tr[data-guia]:hover { background-color: #f8fafc; }
+
+.guia-cell { display: flex; align-items: flex-start; gap: .6rem; white-space: nowrap; }
+.guia-icon { margin-top: .1rem; color: #0284c7; font-size: .9rem; }
+.guia-code { font-weight: 700; color: var(--ic-slate-900); }
+.guia-date { font-size: .66rem; color: var(--ic-slate-400); }
+
+.cell-cliente  { font-weight: 600; color: var(--ic-slate-900); min-width: 150px; }
+.cell-producto { font-weight: 600; color: var(--ic-slate-900); margin-bottom: .2rem; }
+
+/* Cantidad en píldora azul clara (equivale a bg-primary-subtle text-primary) */
+.qty-pill {
+  display: inline-block;
+  padding: .1rem .55rem;
+  background: #e8f1fd;
+  color: #0b64c0;
+  border-radius: .35rem;
+  font-size: .72rem;
+  font-weight: 700;
+}
+
+.loc-main   { font-weight: 600; color: var(--ic-slate-800); white-space: nowrap; }
+.loc-main i { margin-right: .35rem; color: var(--ic-slate-400); }
+.loc-sub    { font-size: .66rem; color: var(--ic-slate-400); padding-left: 1.25rem; }
+
+.cell-operador   { white-space: nowrap; color: #64748b; }
+.cell-operador i { color: var(--ic-slate-400); }
+
+/* ===== Badges de etapa ===== */
+.etapa-badge {
+  display: inline-block;
+  padding: .15rem .65rem;
+  border: 1px solid transparent;
+  border-radius: 50rem;
+  font-size: .68rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.etapa-pendiente  { background: #fefce8; color: #a16207; border-color: #fde047; }                 /* amarillo */
+.etapa-picking    { background: #fff7ed; color: #c2410c; border-color: #fdba74; }                 /* naranja */
+.etapa-packing    { background: #eff6ff; color: #2563eb; border-color: #bfdbfe; }                 /* azul */
+.etapa-despachado { background: #ecfdf5; color: var(--ic-emerald-dark); border-color: #a7f3d0; }  /* verde */
+
+/* ===== Avanzar flujo ===== */
+.accion-ok {
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--ic-emerald-dark);
+  white-space: nowrap;
+}
+
+.btn-flujo {
+  padding: .5rem .9rem;
+  border: 1px solid transparent;
+  border-radius: .5rem;
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background-color .2s ease, transform .15s ease, box-shadow .2s ease;
+}
+
+.btn-flujo:hover { transform: translateY(-1px); color: #fff; }
+
+.btn-flujo-orange { background: #ea580c; border-color: #ea580c; }   /* Iniciar Picking */
+.btn-flujo-orange:hover { background: #c2410c; box-shadow: 0 4px 10px rgba(234, 88, 12, .3); }
+
+.btn-flujo-blue { background: #2563eb; border-color: #2563eb; }     /* Completar Packing */
+.btn-flujo-blue:hover { background: #1d4ed8; box-shadow: 0 4px 10px rgba(37, 99, 235, .3); }
+
+.btn-flujo-green { background: var(--ic-emerald-dark); border-color: var(--ic-emerald-dark); } /* Despachar a Ruta */
+.btn-flujo-green:hover { background: #047857; box-shadow: 0 4px 10px rgba(5, 150, 105, .3); }
+
+/* ===== Móvil ===== */
+@media (max-width: 767.98px) {
+  .sal-search { max-width: none; }
+}
