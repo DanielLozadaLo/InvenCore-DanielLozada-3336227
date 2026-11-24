@@ -1,0 +1,170 @@
+/* InvenCore - Estilos de Catálogo y Registro de Productos.
+   Requiere style.css (variables, sidebar, top bar). */
+
+/* ===== Tarjetas ===== */
+.cat-card {
+  border-radius: 1rem;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, .06) !important;
+}
+
+/* ===== Encabezado ===== */
+.badge-catalogo {
+  padding: .15rem .65rem;
+  background: var(--ic-emerald-soft);
+  color: var(--ic-emerald-dark);
+  border: 1px solid #a7f3d0;
+  border-radius: 50rem;
+  font-size: .72rem;
+  font-weight: 600;
+}
+
+.cat-kicker   { font-size: .75rem; color: var(--ic-slate-400); }
+.cat-title    { font-size: 1.35rem; font-weight: 700; color: var(--ic-slate-900); }
+.cat-subtitle { font-size: .78rem; color: #64748b; }
+
+.btn-registrar {
+  padding: .6rem 1.1rem;
+  background-color: var(--ic-emerald-dark);
+  border-color: var(--ic-emerald-dark);
+  border-radius: .6rem;
+  color: #fff;
+  font-size: .82rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(5, 150, 105, .25);
+  transition: background-color .2s ease, transform .15s ease, box-shadow .2s ease;
+}
+
+.btn-registrar:hover,
+.btn-registrar:focus {
+  background-color: #047857;
+  border-color: #047857;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(5, 150, 105, .3);
+}
+
+/* ===== Búsqueda y filtro ===== */
+.cat-search {
+  max-width: 450px;
+  flex: 1 1 auto;
+  background: #f8fafc;
+  border: 1px solid var(--ic-border);
+  border-radius: .6rem;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.cat-search:focus-within {
+  border-color: var(--ic-emerald-dark);
+  box-shadow: 0 0 0 .2rem rgba(5, 150, 105, .15);
+}
+
+.cat-search .input-group-text,
+.cat-search .form-control {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  font-size: .8rem;
+}
+
+.cat-search .input-group-text { color: var(--ic-slate-400); }
+.cat-search .form-control::placeholder { color: var(--ic-slate-400); }
+
+.btn-categoria {
+  padding: .5rem .85rem;
+  background: #f8fafc;
+  border: 1px solid var(--ic-border);
+  border-radius: .6rem;
+  color: var(--ic-slate-700);
+  font-size: .78rem;
+  font-weight: 600;
+  transition: background-color .2s ease, border-color .2s ease;
+}
+
+.btn-categoria:hover,
+.btn-categoria:focus,
+.btn-categoria.show {
+  background: #fff;
+  border-color: var(--ic-emerald-dark);
+  color: var(--ic-slate-900);
+}
+
+.btn-categoria i { color: var(--ic-slate-400); }
+.btn-categoria::after { display: none; }       /* se usa el icono de filtro, no la flecha */
+
+.cat-dropdown { border-radius: .6rem; font-size: .8rem; }
+.cat-dropdown .dropdown-item.active,
+.cat-dropdown .dropdown-item:active {
+  background-color: var(--ic-emerald-soft);
+  color: var(--ic-emerald-dark);
+  font-weight: 600;
+}
+
+/* ===== Tabla ===== */
+.cat-table { min-width: 980px; font-size: .78rem; }
+
+.cat-table thead th {
+  padding: 1rem .75rem;
+  background: #fff;
+  border-bottom: 1px solid var(--ic-border);
+  color: #64748b;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.cat-table tbody td {
+  padding: 1rem .75rem;
+  border-bottom: 1px solid #f1f5f9;
+  white-space: nowrap;
+}
+
+.cat-table tbody tr:last-child td { border-bottom: 0; }
+.cat-table tbody tr[data-sku]:hover { background-color: #f8fafc; }
+
+.cell-sku   { font-size: .72rem; font-weight: 700; color: var(--ic-slate-900); }
+.prod-name  { font-weight: 600; color: var(--ic-slate-900); }
+.prod-cat   { font-size: .68rem; color: var(--ic-slate-400); }
+.loc-main   { font-weight: 600; color: var(--ic-slate-800); }
+.loc-main i { margin-right: .35rem; color: var(--ic-slate-400); }
+.loc-sub    { font-size: .66rem; color: var(--ic-slate-400); padding-left: 1.25rem; }
+.prov       { color: var(--ic-slate-700); }
+.prov i     { color: var(--ic-slate-400); }
+.cell-price { font-weight: 700; color: var(--ic-slate-900); }
+
+/* Stock con colores semánticos */
+.stock-badge {
+  display: inline-block;
+  padding: .12rem .7rem;
+  border-radius: 50rem;
+  border: 1px solid transparent;
+  font-size: .72rem;
+  font-weight: 700;
+}
+
+.stock-ok  { background: #ecfdf5; color: var(--ic-emerald-dark); border-color: #a7f3d0; }  /* stock suficiente */
+.stock-low { background: var(--ic-red-soft); color: var(--ic-red); border-color: #fecaca; } /* stock crítico */
+
+.stock-min { margin-top: .2rem; font-size: .65rem; color: var(--ic-slate-400); }
+
+/* Acciones */
+.btn-icon {
+  padding: .3rem .4rem;
+  background: transparent;
+  border: 0;
+  border-radius: .4rem;
+  color: var(--ic-slate-400);
+  font-size: .95rem;
+  transition: color .2s ease, background-color .2s ease;
+}
+
+.btn-icon:hover { background-color: #f1f5f9; color: var(--ic-slate-700); }
+.btn-icon[data-action="eliminar"]:hover { background-color: var(--ic-red-soft); color: var(--ic-red); }
+.btn-icon[data-action="editar"]:hover   { background-color: var(--ic-emerald-soft); color: var(--ic-emerald-dark); }
+
+/* Móvil: el dropdown ocupa todo el ancho junto a la búsqueda apilada */
+@media (max-width: 575.98px) {
+  .cat-search { max-width: none; }
+  .cat-dropdown { width: 100%; }
+}
