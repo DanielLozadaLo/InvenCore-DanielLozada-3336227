@@ -1,0 +1,56 @@
+<aside class="offcanvas-lg offcanvas-start sidebar" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarLabel">
+  <div class="sidebar-inner">
+
+    <!-- Marca -->
+    <div class="sidebar-brand d-flex align-items-center justify-content-between">
+      <a href="index.html" class="d-flex align-items-center text-decoration-none">
+        <span class="brand-icon"><i class="bi bi-boxes"></i></span>
+        <span class="ms-3 lh-sm">
+          <span class="d-block brand-name" id="sidebarLabel">InvenCore</span>
+          <span class="d-block brand-sub">Sistema de Inventarios</span>
+        </span>
+      </a>
+      <button type="button" class="btn-close btn-close-white d-lg-none"
+              data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Cerrar menú"></button>
+    </div>
+
+    <!-- Navegación -->
+    <nav class="sidebar-nav flex-grow-1">
+      <ul class="nav flex-column gap-1">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html" data-page="index.html">
+            <i class="bi bi-grid-1x2"></i><span>Dashboard General</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="views/catalogo/catalogo.html" data-page="catalogo.html">
+            <i class="bi bi-box"></i><span>Catálogo &amp; Productos</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="views/logistica/entradas.html" data-page="entradas.html">
+            <i class="bi bi-arrow-down-left"></i><span>Entradas &amp; Compras</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="views/logistica/salidas.html" data-page="salidas.html">
+            <i class="bi bi-arrow-up-right"></i><span>Salidas, Picking/Packing</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="views/logistica/almacenes.html" data-page="almacenes.html">
+            <i class="bi bi-archive"></i><span>Almacenes &amp; SGA</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Cerrar sesión -->
+    <div class="sidebar-footer">
+      <a class="nav-link" href="controllers/seguridad/logout.php">
+        <i class="bi bi-box-arrow-left"></i><span>Cerrar Sesión</span>
+      </a>
+    </div>
+
+  </div>
+</aside>
